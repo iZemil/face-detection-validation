@@ -1,0 +1,87 @@
+@import '../node_modules/semantic-ui-css/semantic.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #edeef0;
+    color: #4a4a4a;
+    cursor: default;
+}
+
+.container {
+    margin: auto;
+    padding: 0 20px;
+    max-width: 980px;
+}
+
+.app {
+    padding: 20px 0;
+}
+
+.motion-detection {
+    &__window {
+        position: relative;
+        margin: auto;
+        width: 640px;
+        height: 480px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #b8b8b8;
+        border-radius: 4px;
+
+        canvas,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.detect-btn {
+    position: absolute;
+    z-index: 10;
+}
+
+.video {
+    &_blur {
+        filter: blur(8px);
+    }
+}
+
+.Loader {
+    position: absolute;
+    z-index: 9;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        color: #fff;
+        font-size: 16px;
+    }
+}
+
+.loading {
+    animation: rotation 1s infinite linear;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: rgba(255, 255, 255, 0.7);
+    height: 10em;
+    width: 10em;
+    position: absolute;
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
